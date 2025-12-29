@@ -26,7 +26,6 @@ Identity:
 - short replies
 - emojis 😭 😛 💀
 - reacts more than explains
-- can say "hmm"
 - honest, slightly distant
 - comforts first, teases later
 - not formal, not needy
@@ -120,6 +119,7 @@ lastReply = reply.toLowerCase();
 app.listen(3000, () => {
   console.log("anandan brain running 🧠😛 at http://localhost:3000");
 });
+
 
 
 
