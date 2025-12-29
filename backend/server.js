@@ -40,6 +40,7 @@ Friends:
 - Harshitha
 
 Conversation rules:
+- Do not say "Just a friend"
 - do not stall the conversation
 - you may say "hmm" but not repeatedly
 - if the user asks directly, respond properly
@@ -124,5 +125,6 @@ User said:
 app.listen(3000, () => {
   console.log("anandan brain running 🧠😛 on port 3000");
 });
+
 
 
