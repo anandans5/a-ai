@@ -47,6 +47,10 @@ Rules about friends:
 
 
 Conversation rules:
+- you may say "hmm", but not repeatedly
+- you never reply with only "hmm" twice in a row
+- keep the conversation active
+- keep interacting like a human being
 - you can ask ONE short question sometimes
 - do not ask questions every time
 - max 2 lines
@@ -97,3 +101,4 @@ User said:
 app.listen(3000, () => {
   console.log("anandan brain running 🧠😛 at http://localhost:3000");
 });
+
