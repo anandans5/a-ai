@@ -17,7 +17,7 @@ async function send() {
   input.value = "";
 
   setTimeout(async () => {
-    const res = await fetch("https://a-ai-do5e.onrender.com/pookie"), {
+    const res = await fetch("https://a-ai-do5e.onrender.com/pookie", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ message: text })
@@ -43,4 +43,5 @@ input.addEventListener("keydown", function (e) {
     send();
   }
 });
+
 
