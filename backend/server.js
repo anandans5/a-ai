@@ -11,6 +11,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+let lastReply = "";
+
 app.post("/pookie", async (req, res) => {
   try {
     const userMsg = req.body.message;
@@ -81,24 +83,41 @@ User said:
       }
     );
 
-    const data = await response.json();
-    const reply =
-      data &&
-      data.choices &&
-      data.choices[0] &&
-      data.choices[0].message &&
-      data.choices[0].message.content
-        ? data.choices[0].message.content
-        : "hmm";
+let reply =
+  data &&
+  data.choices &&
+  data.choices[0] &&
+  data.choices[0].message &&
+  data.choices[0].message.content
+    ? data.choices[0].message.content.trim()
+    : "";
 
-    res.json({ reply });
-  } catch (err) {
-    console.error(err);
-    res.json({ reply: "hmm" });
+const lower = reply.toLowerCase();
+const userLower = userMsg.toLowerCase();
+
+
+if (
+  lower === "" ||
+  lower === "hmm" ||
+  (lower === "hmm" && lastReply === "hmm")
+) {
+  if (userLower.includes("hi") || userLower.includes("hello")) {
+    reply = "hey 😛";
+  } else if (userLower.includes("?")) {
+    reply = "yeah? 😭";
+  } else if (userLower.includes("tf") || userLower.includes("why")) {
+    reply = "okay okay 💀 what’s up";
+  } else {
+    reply = "talk to me 😭";
   }
-});
+}
+
+
+lastReply = reply.toLowerCase();
+
 
 app.listen(3000, () => {
   console.log("anandan brain running 🧠😛 at http://localhost:3000");
 });
+
 
