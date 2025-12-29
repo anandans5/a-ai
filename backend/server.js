@@ -15,6 +15,7 @@ let lastReply = "";
 
 app.post("/pookie", async (req, res) => {
   try {
+    return res.json({ reply: "backend alive 😛" });
     const userMsg = req.body.message;
 
     const prompt = `
@@ -119,5 +120,6 @@ lastReply = reply.toLowerCase();
 app.listen(3000, () => {
   console.log("anandan brain running 🧠😛 at http://localhost:3000");
 });
+
 
 
