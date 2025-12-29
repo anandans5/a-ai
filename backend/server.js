@@ -87,7 +87,12 @@ User said:
     const lowerUser = userMsg.toLowerCase();
 
     // hard anti-hmm guard
-    if (lowerReply === "" || lowerReply === "hmm" || lowerReply === lastReply) {
+      if (
+        lowerReply === "" ||
+        lowerReply === "hmm" ||
+        (lowerReply === lastReply && lowerReply.length < 8)
+      ) {
+
       if (lowerUser.includes("hi") || lowerUser.includes("hello")) {
         reply = "hey 😛";
       } else if (lowerUser.includes("?")) {
@@ -119,4 +124,5 @@ User said:
 app.listen(3000, () => {
   console.log("anandan brain running 🧠😛 on port 3000");
 });
+
 
