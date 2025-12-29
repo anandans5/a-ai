@@ -94,9 +94,17 @@ User said:
         reply = "yeah 😭 what’s up";
       } else if (lowerUser.includes("tf") || lowerUser.includes("why")) {
         reply = "okay okay 💀 say it";
-      } else {
-        reply = "talk to me 😭";
-      }
+    } else {
+      const nudges = [
+        "wyd 😛",
+        "what’s on your mind",
+        "say it 😭",
+        "hmm okay… go on",
+        "you’re quiet 💀"
+      ];
+      reply = nudges[Math.floor(Math.random() * nudges.length)];
+}
+
     }
 
     lastReply = reply.toLowerCase();
@@ -111,3 +119,4 @@ User said:
 app.listen(3000, () => {
   console.log("anandan brain running 🧠😛 on port 3000");
 });
+
